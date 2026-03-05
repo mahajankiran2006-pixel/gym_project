@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Admin form input placeholder styles */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #94a3b8;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #94a3b8;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #94a3b8;
+}
+
+/* Form input text styles - white color and larger size */
+.form-control {
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
+.form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+textarea.form-control {
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
+select.form-control {
+  color: #ffffff !important;
+  font-size: 16px !important;
+}
+
+select.form-control option {
+  color: #000000;
+  background-color: #ffffff;
+}
