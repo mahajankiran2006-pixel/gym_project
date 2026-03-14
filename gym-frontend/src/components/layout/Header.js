@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import getAssetPath from "../../utils/assetPath";
 
 const Header = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -20,7 +21,7 @@ const Header = () => {
           <div className="menu-wrapper d-flex align-items-center justify-content-between">
             <div className="logo">
               <Link to="/">
-                <img src="/assets/img/logo/logo.png" alt="logo" />
+                <img src={getAssetPath("/assets/img/logo/logo.png")} alt="logo" />
               </Link>
             </div>
             <div className="main-menu f-right d-none d-lg-block">

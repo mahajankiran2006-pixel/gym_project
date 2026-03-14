@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import getAssetPath from '../utils/assetPath';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -86,7 +87,7 @@ const Gallery = () => {
                         />
                       ) : (
                         <img
-                          src="/assets/img/gallery/team1.png"
+                          src={getAssetPath("/assets/img/gallery/team1.png")}
                           alt={trainer.name}
                           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                         />
@@ -142,7 +143,7 @@ const Gallery = () => {
                 <div className="box snake mb-30">
                   <div
                     className="gallery-img big-img"
-                    style={{ backgroundImage: `url(/assets/img/gallery/gallery${n}.png)` }}
+                    style={{ backgroundImage: `url(${getAssetPath(`/assets/img/gallery/gallery${n}.png`)})` }}
                   />
                   <div className="overlay">
                     <div className="overlay-content">

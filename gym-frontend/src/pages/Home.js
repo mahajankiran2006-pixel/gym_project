@@ -1,4 +1,5 @@
 import React from 'react';
+import getAssetPath from '../utils/assetPath';
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Home = () => {
             <div className="col-xl-6 col-lg-6">
               <div className="single-topic text-center mb-30">
                 <div className="topic-img">
-                  <img src="/assets/img/gallery/cat1.png" alt="Personal training" />
+                  <img src={getAssetPath("/assets/img/gallery/cat1.png")} alt="Personal training" />
                   <div className="topic-content-box">
                     <div className="topic-content">
                       <h3>Personal traning</h3>
@@ -60,7 +61,7 @@ const Home = () => {
             <div className="col-xl-6 col-lg-6">
               <div className="single-topic text-center mb-30">
                 <div className="topic-img">
-                  <img src="/assets/img/gallery/cat2.png" alt="Group training" />
+                  <img src={getAssetPath("/assets/img/gallery/cat2.png")} alt="Group training" />
                   <div className="topic-content-box">
                     <div className="topic-content">
                       <h3>Group traning</h3>
@@ -99,7 +100,7 @@ const Home = () => {
                 data-wow-delay=".2s"
               >
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team1.png" alt="Body Building" />
+                  <img src={getAssetPath("/assets/img/gallery/team1.png")} alt="Body Building" />
                 </div>
                 <div className="cat-cap">
                   <h5>
@@ -116,7 +117,7 @@ const Home = () => {
                 data-wow-delay=".4s"
               >
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team2.png" alt="Muscle Gain" />
+                  <img src={getAssetPath("/assets/img/gallery/team2.png")} alt="Muscle Gain" />
                 </div>
                 <div className="cat-cap">
                   <h5>
@@ -133,7 +134,7 @@ const Home = () => {
                 data-wow-delay=".6s"
               >
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team3.png" alt="Weight Loss" />
+                  <img src={getAssetPath("/assets/img/gallery/team3.png")} alt="Weight Loss" />
                 </div>
                 <div className="cat-cap">
                   <h5>
@@ -155,7 +156,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery1.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery1.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -171,7 +172,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery2.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery2.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -187,7 +188,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery3.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery3.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -203,7 +204,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery4.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery4.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -219,7 +220,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery5.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery5.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -235,7 +236,7 @@ const Home = () => {
               <div className="box snake mb-30">
                 <div
                   className="gallery-img big-img"
-                  style={{ backgroundImage: 'url(/assets/img/gallery/gallery6.png)' }}
+                  style={{ backgroundImage: `url(${getAssetPath("/assets/img/gallery/gallery6.png")})` }}
                 />
                 <div className="overlay">
                   <div className="overlay-content">
@@ -267,7 +268,7 @@ const Home = () => {
                 <div className="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay={`.${card + 2}s`}>
                   <div className="properties__card">
                     <div className="about-icon">
-                      <img src="/assets/img/icon/price.svg" alt="price icon" />
+                      <img src={getAssetPath("/assets/img/icon/price.svg")} alt="price icon" />
                     </div>
                     <div className="properties__caption">
                       <span className="month">6 month</span>
@@ -277,7 +278,7 @@ const Home = () => {
                       {[0, 1, 2, 3, 4].map((feature) => (
                         <div className={`single-features${feature === 4 ? ' mb-20' : ''}`} key={feature}>
                           <div className="features-icon">
-                            <img src="/assets/img/icon/check.svg" alt="check" />
+                            <img src={getAssetPath("/assets/img/icon/check.svg")} alt="check" />
                           </div>
                           <div className="features-caption">
                             <p>
@@ -307,7 +308,7 @@ const Home = () => {
         <div className="support-wrapper align-items-center">
           <div className="right-content2">
             <div className="right-img wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-              <img src="/assets/img/gallery/about.png" alt="About" />
+              <img src={getAssetPath("/assets/img/gallery/about.png")} alt="About" />
             </div>
           </div>
           <div className="left-content2">
@@ -347,7 +348,7 @@ const Home = () => {
               <div className="home-blog-single mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                 <div className="blog-img-cap">
                   <div className="blog-img">
-                    <img src="/assets/img/gallery/blog1.png" alt="blog 1" />
+                    <img src={getAssetPath("/assets/img/gallery/blog1.png")} alt="blog 1" />
                   </div>
                   <div className="blog-cap">
                     <span>Gym &amp; Fitness</span>
@@ -362,7 +363,7 @@ const Home = () => {
               <div className="home-blog-single mb-30 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".6s">
                 <div className="blog-img-cap">
                   <div className="blog-img">
-                    <img src="/assets/img/gallery/blog2.png" alt="blog 2" />
+                    <img src={getAssetPath("/assets/img/gallery/blog2.png")} alt="blog 2" />
                   </div>
                   <div className="blog-cap">
                     <span>Gym &amp; Fitness</span>
@@ -384,7 +385,7 @@ const Home = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
               <div className="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
                 <div className="features-icon">
-                  <img src="/assets/img/icon/icon1.svg" alt="location" />
+                  <img src={getAssetPath("/assets/img/icon/icon1.svg")} alt="location" />
                 </div>
                 <div className="features-caption">
                   <h3>Location</h3>
@@ -395,7 +396,7 @@ const Home = () => {
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
               <div className="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                 <div className="features-icon">
-                  <img src="/assets/img/icon/icon2.svg" alt="phone" />
+                  <img src={getAssetPath("/assets/img/icon/icon2.svg")} alt="phone" />
                 </div>
                 <div className="features-caption">
                   <h3>Phone</h3>
@@ -407,7 +408,7 @@ const Home = () => {
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8">
               <div className="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
                 <div className="features-icon">
-                  <img src="/assets/img/icon/icon3.svg" alt="email" />
+                  <img src={getAssetPath("/assets/img/icon/icon3.svg")} alt="email" />
                 </div>
                 <div className="features-caption">
                   <h3>Email</h3>

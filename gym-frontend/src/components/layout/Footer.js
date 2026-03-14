@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import getAssetPath from '../../utils/assetPath';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
               <div className="col-xl-12">
                 <div className="single-footer-caption mb-50 text-center">
                   <div className="footer-logo">
-                    <Link to="/"><img src="/assets/img/logo/logo2_footer.png" alt="footer logo" /></Link>
+                    <Link to="/"><img src={getAssetPath("/assets/img/logo/logo2_footer.png")} alt="footer logo" /></Link>
                   </div>
                   <div className="header-area main-header2">
                     <div className="main-header main-header2">

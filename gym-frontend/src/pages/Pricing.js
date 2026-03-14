@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import getAssetPath from '../utils/assetPath';
 
 const API_BASE_URL = 'http://localhost:5000/api';
 
@@ -127,7 +128,7 @@ const Pricing = () => {
                   <div className="properties mb-30">
                     <div className="properties__card">
                       <div className="about-icon">
-                        <img src="/assets/img/icon/price.svg" alt="price icon" />
+                        <img src={getAssetPath("/assets/img/icon/price.svg")} alt="price icon" />
                       </div>
                       <div className="properties__caption">
                         <span className="month">{course.durationMonths} month{course.durationMonths > 1 ? 's' : ''}</span>

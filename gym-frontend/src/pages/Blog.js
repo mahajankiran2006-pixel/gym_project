@@ -1,4 +1,5 @@
 import React from 'react';
+import getAssetPath from '../utils/assetPath';
 
 const Blog = () => {
   return (
@@ -31,7 +32,7 @@ const Blog = () => {
               <div className="home-blog-single mb-30">
                 <div className="blog-img-cap">
                   <div className="blog-img">
-                    <img src="/assets/img/gallery/blog1.png" alt="blog1" />
+                    <img src={getAssetPath("/assets/img/gallery/blog1.png")} alt="blog1" />
                   </div>
                   <div className="blog-cap">
                     <span>Gym &amp; Fitness</span>
@@ -44,7 +45,7 @@ const Blog = () => {
               <div className="home-blog-single mb-30">
                 <div className="blog-img-cap">
                   <div className="blog-img">
-                    <img src="/assets/img/gallery/blog2.png" alt="blog2" />
+                    <img src={getAssetPath("/assets/img/gallery/blog2.png")} alt="blog2" />
                   </div>
                   <div className="blog-cap">
                     <span>Gym &amp; Fitness</span>

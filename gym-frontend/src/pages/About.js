@@ -1,4 +1,5 @@
 import React from 'react';
+import getAssetPath from '../utils/assetPath';
 
 const About = () => {
   return (
@@ -23,7 +24,7 @@ const About = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-cat text-center mb-30">
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team1.png" alt="Body Building" />
+                  <img src={getAssetPath("/assets/img/gallery/team1.png")} alt="Body Building" />
                 </div>
                 <div className="cat-cap">
                   <h5>Body Building</h5>
@@ -34,7 +35,7 @@ const About = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-cat text-center mb-30">
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team2.png" alt="Muscle Gain" />
+                  <img src={getAssetPath("/assets/img/gallery/team2.png")} alt="Muscle Gain" />
                 </div>
                 <div className="cat-cap">
                   <h5>Muscle Gain</h5>
@@ -45,7 +46,7 @@ const About = () => {
             <div className="col-lg-4 col-md-6">
               <div className="single-cat text-center mb-30">
                 <div className="cat-icon">
-                  <img src="/assets/img/gallery/team3.png" alt="Weight Loss" />
+                  <img src={getAssetPath("/assets/img/gallery/team3.png")} alt="Weight Loss" />
                 </div>
                 <div className="cat-cap">
                   <h5>Weight Loss</h5>
@@ -61,7 +62,7 @@ const About = () => {
         <div className="support-wrapper align-items-center">
           <div className="right-content2">
             <div className="right-img">
-              <img src="/assets/img/gallery/about.png" alt="About" />
+              <img src={getAssetPath("/assets/img/gallery/about.png")} alt="About" />
             </div>
           </div>
           <div className="left-content2">
