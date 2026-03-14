@@ -1,0 +1,31 @@
+{
+  "name": "gym-management-system",
+  "version": "1.0.0",
+  "description": "A full-stack gym management application",
+  "main": "gym-backend/src/server.js",
+  "scripts": {
+    "install-backend": "cd gym-backend && npm install",
+    "install-frontend": "cd gym-frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "start-backend": "cd gym-backend && npm start",
+    "start-frontend": "cd gym-frontend && npm start",
+    "dev-backend": "cd gym-backend && npm run dev",
+    "dev-frontend": "cd gym-frontend && npm start",
+    "build-frontend": "cd gym-frontend && npm run build",
+    "seed": "cd gym-backend && npm run seed"
+  },
+  "keywords": [
+    "gym",
+    "management",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Kiran Mahajan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahajankiran2006-pixel/gym_project.git"
+  }
+}
