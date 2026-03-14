@@ -1,106 +1,261 @@
 # Gym Management System
 
-A full-stack gym management application built with React frontend and Node.js/Express backend.
-
-## Project Structure
-
-- `gym-frontend/` - React frontend application
-- `gym-backend/` - Node.js/Express backend API
+A full-stack gym management website with course enrollment, product shop, trainer profiles, and order management.
 
 ## Features
 
-- User authentication and authorization
-- Trainer management
-- Course management
-- Product management
-- Order processing
-- Contact management
+### User Features
+- **User Authentication**: Register, login, and password management
+- **Course Browsing**: View available fitness courses with details
+- **Course Enrollment**: Purchase courses with COD or test card payment
+- **Product Shop**: Browse and purchase gym products and supplements
+- **Shopping Cart**: Add/remove products, manage quantities
+- **Order Management**: View order history and status
+- **Trainer Profiles**: View trainer information and specialties
+- **Gallery**: Browse workout images and trainer profiles
 
-## Technologies Used
+### Admin Features
+- **Admin Dashboard**: Complete management interface
+- **Order Management**: View all orders, update status and payment status
+- **Course Management**: Create, edit, and delete courses
+- **Product Management**: Create, edit, and delete products
+- **Trainer Management**: Create, edit, and delete trainers
 
-### Frontend
-- React 19.2.0
-- React Router DOM
-- Axios for API calls
-- Bootstrap for styling
+## Tech Stack
 
 ### Backend
 - Node.js with Express
 - MongoDB with Mongoose
-- JWT for authentication
+- JWT Authentication
 - bcryptjs for password hashing
 - CORS for cross-origin requests
+
+### Frontend
+- React 19.2.0
+- React Router DOM for navigation
+- Axios for API calls
+- Context API for state management
+- Bootstrap for styling
 
 ## Setup Instructions
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- MongoDB database
+- MongoDB (local or cloud instance)
+- npm or yarn
 - Git
 
 ### Backend Setup
 
 1. Navigate to the backend directory:
-   ```bash
-   cd gym-backend
-   ```
+```bash
+cd gym-backend
+```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-3. Create a `.env` file based on `.env.example`:
-   ```bash
-   cp .env.example .env
-   ```
+3. Create a `.env` file in the `gym-backend` directory:
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/gym_db
+JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+```
 
-4. Update the `.env` file with your configuration:
-   ```
-   PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
-   ```
+4. Start MongoDB (if running locally):
+```bash
+# On Windows (if MongoDB is installed as a service, it should start automatically)
+# On Mac/Linux:
+mongod
+```
 
-5. Seed the database (optional):
-   ```bash
-   npm run seed
-   ```
+5. Seed the database with initial data:
+```bash
+npm run seed
+```
 
-6. Start the development server:
-   ```bash
-   npm run dev
-   ```
+This will create:
+- Admin user: `admin@gym.com` / `admin123`
+- Regular user: `user@gym.com` / `user123`
+- Sample courses, products, and trainers
+
+6. Start the backend server:
+```bash
+# Development mode (with auto-reload):
+npm run dev
+
+# Production mode:
+npm start
+```
+
+The backend will run on `http://localhost:5000`
 
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
-   ```bash
-   cd gym-frontend
-   ```
+```bash
+cd gym-frontend
+```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. Start the development server:
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
-The frontend will run on `http://localhost:3000` and the backend on `http://localhost:5000`.
+The frontend will run on `http://localhost:3000`
 
 ## API Endpoints
 
-The backend provides RESTful API endpoints for:
-- User authentication (`/api/auth`)
-- User management (`/api/users`)
-- Trainer management (`/api/trainers`)
-- Course management (`/api/courses`)
-- Product management (`/api/products`)
-- Order management (`/api/orders`)
-- Contact management (`/api/contacts`)
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `POST /api/auth/change-password` - Change password (authenticated)
+
+### Courses
+- `GET /api/courses` - Get all active courses (public)
+- `POST /api/courses` - Create course (admin only)
+- `PUT /api/courses/:id` - Update course (admin only)
+- `DELETE /api/courses/:id` - Delete course (admin only)
+
+### Products
+- `GET /api/products` - Get all active products (public)
+- `POST /api/products` - Create product (admin only)
+- `PUT /api/products/:id` - Update product (admin only)
+- `DELETE /api/products/:id` - Delete product (admin only)
+
+### Trainers
+- `GET /api/trainers` - Get all active trainers (public)
+- `POST /api/trainers` - Create trainer (admin only)
+- `PUT /api/trainers/:id` - Update trainer (admin only)
+- `DELETE /api/trainers/:id` - Delete trainer (admin only)
+
+### Orders
+- `POST /api/orders` - Create order (authenticated)
+- `GET /api/orders/my` - Get user's orders (authenticated)
+- `GET /api/orders` - Get all orders (admin only)
+- `PUT /api/orders/:id` - Update order (admin only)
+
+### Contact
+- `POST /api/contacts` - Submit contact form (public)
+- `GET /api/contacts` - Get all contacts (admin only)
+
+## Payment Methods
+
+### Test Card Payment
+- Card Number: `4242424242424242`
+- CVV: Any 3+ digit number
+- Expiry: Any future date (MM/YY format)
+
+### Cash on Delivery (COD)
+- No payment required at checkout
+- Payment status will be marked as "pending"
+
+## Project Structure
+
+```
+gym_project/
+├── gym-backend/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js          # MongoDB connection
+│   │   ├── middleware/
+│   │   │   └── authMiddleware.js  # JWT authentication
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Course.js
+│   │   │   ├── Product.js
+│   │   │   ├── Trainer.js
+│   │   │   ├── Order.js
+│   │   │   └── Contact.js
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   ├── courseRoutes.js
+│   │   │   ├── productRoutes.js
+│   │   │   ├── trainerRoutes.js
+│   │   │   ├── orderRoutes.js
+│   │   │   └── contactRoutes.js
+│   │   ├── scripts/
+│   │   │   └── seed.js       # Database seeding script
+│   │   ├── app.js            # Express app configuration
+│   │   └── server.js         # Server entry point
+│   └── package.json
+│
+├── gym-frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── layout/
+│   │   │       ├── Header.js
+│   │   │       └── Footer.js
+│   │   ├── context/
+│   │   │   └── AuthContext.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── About.js
+│   │   │   ├── Courses.js
+│   │   │   ├── Pricing.js
+│   │   │   ├── Shop.js
+│   │   │   ├── Gallery.js
+│   │   │   ├── Blog.js
+│   │   │   ├── Contact.js
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── Profile.js
+│   │   │   ├── Checkout.js
+│   │   │   └── AdminDashboard.js
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+│
+└── README.md
+```
+
+## Usage
+
+1. **As a User:**
+   - Register or login to your account
+   - Browse courses and enroll in training programs
+   - Shop for gym products and supplements
+   - View your order history in the profile page
+   - View trainer profiles in the gallery
+
+2. **As an Admin:**
+   - Login with admin credentials (`admin@gym.com` / `admin123`)
+   - Access the Admin Dashboard from the navigation menu
+   - Manage courses, products, trainers, and orders
+   - Update order statuses and payment information
+
+## Development
+
+### Running in Development Mode
+
+Backend:
+```bash
+cd gym-backend
+npm run dev
+```
+
+Frontend:
+```bash
+cd gym-frontend
+npm start
+```
+
+### Building for Production
+
+Frontend:
+```bash
+cd gym-frontend
+npm run build
+```
+
+The build folder will contain the production-ready static files.
 
 ## Deployment
 
@@ -110,12 +265,29 @@ Make sure to set the following environment variables in your production environm
 - `MONGODB_URI` - MongoDB connection string
 - `JWT_SECRET` - Secret key for JWT tokens
 
-### Production Build
-To create a production build of the frontend:
-```bash
-cd gym-frontend
-npm run build
-```
+### Security Notes
+
+- Change the `JWT_SECRET` in production
+- Use environment variables for sensitive data
+- Implement rate limiting for production
+- Add input validation and sanitization
+- Use HTTPS in production
+- Implement proper CORS policies
+
+## Troubleshooting
+
+### MongoDB Connection Issues
+- Ensure MongoDB is running
+- Check the `MONGODB_URI` in `.env` file
+- Verify MongoDB connection string format
+
+### CORS Issues
+- Backend CORS is configured to allow all origins in development
+- Update CORS settings for production
+
+### Port Already in Use
+- Change the PORT in `.env` file
+- Or kill the process using the port
 
 ## Contributing
 
